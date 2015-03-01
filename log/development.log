@@ -16626,3 +16626,37 @@ Processing by UsersController#index as HTML
   Rendered layouts/_navigation.html.erb (2.5ms)
   Rendered layouts/_messages.html.erb (0.1ms)
 Completed 200 OK in 227ms (Views: 224.4ms | ActiveRecord: 0.8ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "user@example.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "cities" ("name", "short_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Gdynia"], ["short_name", "Gdy"], ["created_at", "2015-03-01 15:51:54.227343"], ["updated_at", "2015-03-01 15:51:54.227343"]]
+  [1m[36m (182.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "cities" ("name", "short_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Sopot"], ["short_name", "Spt"], ["created_at", "2015-03-01 15:51:54.413576"], ["updated_at", "2015-03-01 15:51:54.413576"]]
+  [1m[35m (130.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "cities" ("name", "short_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Poznań"], ["short_name", "Pzn"], ["created_at", "2015-03-01 15:51:54.547553"], ["updated_at", "2015-03-01 15:51:54.547553"]]
+  [1m[36m (139.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "cities" ("name", "short_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Wrocław"], ["short_name", "Wro"], ["created_at", "2015-03-01 15:51:54.690335"], ["updated_at", "2015-03-01 15:51:54.690335"]]
+  [1m[35m (119.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cities" ("name", "short_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Zakopane"], ["short_name", "Zkp"], ["created_at", "2015-03-01 15:51:54.812015"], ["updated_at", "2015-03-01 15:51:54.812015"]]
+  [1m[36m (131.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "cities" ("name", "short_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Rzeszów"], ["short_name", "Rze"], ["created_at", "2015-03-01 15:51:54.946156"], ["updated_at", "2015-03-01 15:51:54.946156"]]
+  [1m[35m (141.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "cities" ("name", "short_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["name", "Łódź"], ["short_name", "Łdź"], ["created_at", "2015-03-01 15:51:55.089935"], ["updated_at", "2015-03-01 15:51:55.089935"]]
+  [1m[36m (130.1ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/cities" for 127.0.0.1 at 2015-03-01 16:52:01 +0100
+Processing by CitiesController#index as HTML
+  [1m[35mCity Load (0.4ms)[0m  SELECT "cities".* FROM "cities"
+  Rendered cities/index.html.erb within layouts/application (14.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 20]]
+  Rendered layouts/_navigation_links.html.erb (2.7ms)
+  Rendered layouts/_navigation.html.erb (4.9ms)
+  Rendered layouts/_messages.html.erb (0.2ms)
+Completed 200 OK in 240ms (Views: 230.1ms | ActiveRecord: 0.9ms)
