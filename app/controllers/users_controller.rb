@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @users = User.paginate(:page => params[:page], :per_page => 5)
   end
 
   def show
@@ -11,5 +12,6 @@ class UsersController < ApplicationController
       redirect_to :back, :alert => "Access denied."
     end
   end
+
 
 end

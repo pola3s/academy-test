@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150301104834) do
+ActiveRecord::Schema.define(version: 20150301121630) do
+
+  create_table "cities", force: :cascade do |t|
+    t.string   "name"
+    t.string   "short_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+  end
+
+  add_index "cities", ["user_id"], name: "index_cities_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -28,8 +38,12 @@ ActiveRecord::Schema.define(version: 20150301104834) do
     t.datetime "updated_at"
     t.string   "name"
     t.integer  "age"
+    t.integer  "city_id_id"
+    t.integer  "city_id"
   end
 
+  add_index "users", ["city_id"], name: "index_users_on_city_id"
+  add_index "users", ["city_id_id"], name: "index_users_on_city_id_id"
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
